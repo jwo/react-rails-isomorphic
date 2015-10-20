@@ -1,10 +1,5 @@
 <h1>Home#show</h1>
 
-<div class="app">
-
-  <%= react_component 'Votie' %>
-  <%= react_component 'Chartie' %>
-
 
 <div class="reveal">
     <div class="slides">
@@ -16,7 +11,15 @@
     </div>
 </div>
 
+<div class="columns">
+
+  <div class="votie"><%= react_component 'Votie' %></div>
+  <div class="chartie"><%= react_component 'Chartie' %></div>
+
 </div>
+
+
+
 
 <script>
 
@@ -57,7 +60,7 @@ Reveal.initialize({
 
     // Flags if the presentation is running in an embedded mode,
     // i.e. contained within a limited portion of the screen
-    embedded: false,
+    embedded: true,
 
     // Flags if we should show a help overlay when the questionmark
     // key is pressed

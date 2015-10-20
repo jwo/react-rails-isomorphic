@@ -57,7 +57,6 @@ var Votie = React.createClass({
 
   render() {
     return <div className="voting">
-      <p>Current Vote: {this.state.vote}</p>
       {this.vote("down")}
       {this.vote("up")}
     </div>;

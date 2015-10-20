@@ -26,7 +26,6 @@ var Chartie = React.createClass({
   },
   render(){
     return <div>
-      <h2>Chart</h2>
       <NVD3Chart type='lineChart' datum={this.state.datum} ></NVD3Chart>
     </div>
   }

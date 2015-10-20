@@ -1,4 +1,16 @@
-.app {
+.columns {
+  display: flex;
+  flex-direction: row;
+
+  .votie {
+    flex: 2;
+  }
+  .chartie {
+    flex: 5;
+  }
+}
+.reveal{
+  height: 300px !important;
 }
 
 .voting {
