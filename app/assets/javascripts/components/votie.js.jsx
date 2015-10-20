@@ -13,7 +13,6 @@ var Votie = React.createClass({
       }
     }
     if (this.state.vote !== "abstain"){
-      // $.post("/api/votes", theJson);
       App.electNotification.vote(theJson);
     }
   },

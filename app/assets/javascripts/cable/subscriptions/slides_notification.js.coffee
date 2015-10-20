@@ -4,7 +4,6 @@ App.slidesNotification = App.cable.subscriptions.create "SlidesChannel",
 
   advanceSlide: (data)->
     # tell action-cable rails to execute something
-    # TODO: test if we're admin
     @perform 'slides', data
 
   received: (data) ->
