@@ -1,11 +1,9 @@
 class ElectChannel < ApplicationCable::Channel
 
    def vote(data)
-     @vote = Vote.new #params.require(:vote).permit(:direction)
+     @vote = Vote.new
      @vote.direction = data.fetch("vote", {})["direction"]
-     if @vote.save
-       puts "Vote saved!"
-     end
+     @vote.save
    end
 
  end
