@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'home#show'
-  
+
   namespace :api do
-    get "current" => 'votes#current'
     post "votes" => 'votes#create'
   end
 

@@ -1,3 +1,17 @@
+GIT
+  remote: git://github.com/rails/actioncable.git
+  revision: 904b83b9c3d5dc1f1ceac1552dd5b80513aa3232
+  specs:
+    actioncable (0.0.3)
+      actionpack (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      celluloid (~> 0.16.0)
+      coffee-rails
+      em-hiredis (~> 0.3.0)
+      faye-websocket (~> 0.10.0)
+      redis (~> 3.0)
+      websocket-driver (~> 0.6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +59,8 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (6.0.2)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -56,12 +72,23 @@ GEM
     d3-rails (3.5.6)
       railties (>= 3.1)
     debug_inspector (0.0.2)
+    em-hiredis (0.3.0)
+      eventmachine (~> 1.0)
+      hiredis (~> 0.5.0)
     erubis (2.7.0)
+    eventmachine (1.0.8)
     execjs (2.6.0)
+    faye-websocket (0.10.0)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
     font-awesome-rails (4.4.0.0)
       railties (>= 3.2, < 5.0)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    hiredis (0.5.2)
+    hitimes (1.2.3)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -83,6 +110,7 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.3)
+    puma (2.14.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -121,6 +149,7 @@ GEM
       execjs
       rails (>= 3.2)
       tilt
+    redis (3.2.1)
     ref (2.0.0)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -145,6 +174,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
+    timers (4.0.4)
+      hitimes
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -157,18 +188,24 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    websocket-driver (0.6.2)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  actioncable!
   byebug
   coffee-rails (~> 4.1.0)
   d3-rails
   font-awesome-rails
+  foreman
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  puma
   rails (= 4.2.4)
   rails-reveal-js
   react-rails

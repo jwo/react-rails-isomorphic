@@ -13,11 +13,19 @@ var Votie = React.createClass({
       }
     }
     if (this.state.vote !== "abstain"){
-      $.post("/api/votes", theJson);
+      // $.post("/api/votes", theJson);
+      App.electNotification.vote(theJson);
     }
   },
 
   componentWillMount(){
+
+    App.electNotification = App.cable.subscriptions.create("ElectChannel", {
+      vote(data) {
+        return this.perform('vote', data);
+      }
+    });
+
     this.votingInterval = setInterval(this.castVote, 1000);
   },
 

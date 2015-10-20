@@ -11,18 +11,18 @@ var Chartie = React.createClass({
       ]
     }
   },
-  fetchNumbers(){
-    var component = this;
-    $.getJSON("/api/current").done(function(json){
-      component.setState({datum: json})
-    });
-  },
   componentWillUnmount(){
-    clearInterval(this.updateInteval);
+    App.votesSubcription = {};
   },
+
   componentWillMount(){
-    this.fetchNumbers();
-    this.updateInterval = setInterval(this.fetchNumbers, 1000);
+    var component = this;
+    App.votesSubcription = App.cable.subscriptions.create("VotesChannel", {
+      received(data) {
+        component.setState({datum: data});
+      }
+    });
+
   },
   render(){
     return <div>

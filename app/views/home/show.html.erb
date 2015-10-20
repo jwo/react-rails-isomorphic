@@ -1,9 +1,9 @@
 <h1>Home#show</h1>
 
+<div class="app">
 
   <%= react_component 'Votie' %>
   <%= react_component 'Chartie' %>
-
 
 
 <div class="reveal">
@@ -14,6 +14,8 @@
             <section>Vertical Slide 2</section>
         </section>
     </div>
+</div>
+
 </div>
 
 <script>
@@ -108,11 +110,15 @@ Reveal.initialize({
 
 Reveal.addEventListener( 'slidechanged', function( event ) {
 
-  // TODO: on slide changed send command to rails using action-cable
-  ///      It should tell rails that I moved to a new page
-  ///      That should then tell clients to move to a new page
+  var slide = {
+    "indexh": event.indexh,
+    "indexv": event.indexv,
+    "indexf": event.indexf
+  }
 
-  console.log("currentSlide: ", event.currentSlide);
-    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+  // $.post("/api/next", slide);
+
+  App.slidesNotification.advanceSlide(slide);
+
 } );
 </script>
