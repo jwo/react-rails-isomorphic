@@ -13,6 +13,6 @@
  *= require_tree .
  *= require font-awesome
  *= require reveal
- *= require reveal-theme/serif
+ *= require reveal-theme/solarized
  *= require_self
  */

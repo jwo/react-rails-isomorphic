@@ -1,23 +1,50 @@
+.ourContainer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  // justify-content: space-around;
+
+  .presentation{
+    order: 1;
+    flex: 1;
+    // height: 80%;
+    // align-self: stretch;
+    // flex: 5 auto;
+    .reveal {
+      height: 500px;
+    }
+  }
+
+
+  .columns {
+    order: 2;
+    // flex: 1 0px;
+    // flex: 1;
+    // align-self: flex-end;
+    height: 150px;
+    // margin: auto;
+  }
+
+}
+
 .columns {
   display: flex;
   flex-direction: row;
 
   .votie {
-    flex: 2;
+    flex: 3;
   }
   .chartie {
-    flex: 5;
+    flex: 6;
   }
-}
-.reveal{
-  height: 300px !important;
 }
 
 .voting {
   display: flex;
+
   .vote {
     cursor: pointer;
-    flex: 1;
+    margin: auto;
     color: #cccccc;
     i.fa-thumbs-down {
       &.current {

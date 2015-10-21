@@ -1,21 +1,14 @@
-<h1>Home#show</h1>
+<div class="ourContainer">
+
+  <div class="presentation">
+    <%= render partial: 'slides' %>
+  </div>
 
 
-<div class="reveal">
-    <div class="slides">
-        <section>Single Horizontal Slide</section>
-        <section>
-            <section>Vertical Slide 1</section>
-            <section>Vertical Slide 2</section>
-        </section>
-    </div>
-</div>
-
-<div class="columns">
-
-  <div class="votie"><%= react_component 'Votie' %></div>
-  <div class="chartie"><%= react_component 'Chartie' %></div>
-
+  <div class="columns">
+    <div class="votie"><%= react_component 'Votie' %></div>
+    <div class="chartie"><%= react_component 'Chartie' %></div>
+  </div>
 </div>
 
 
@@ -26,10 +19,10 @@
 Reveal.initialize({
 
     // Display controls in the bottom right corner
-    controls: true,
+    controls: false,
 
     // Display a presentation progress bar
-    progress: true,
+    progress: false,
 
     // Display the page number of the current slide
     slideNumber: false,
@@ -38,7 +31,7 @@ Reveal.initialize({
     history: false,
 
     // Enable keyboard shortcuts for navigation
-    keyboard: true,
+    keyboard: false,
 
     // Enable the slide overview mode
     overview: true,
