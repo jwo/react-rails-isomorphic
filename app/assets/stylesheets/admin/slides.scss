@@ -1,0 +1,7 @@
+$red: red;
+.alert {
+  border: 1px solid darken($red, 20%);
+  color: white;
+  background: lighten($red, 20%);
+  padding: 1em;
+}

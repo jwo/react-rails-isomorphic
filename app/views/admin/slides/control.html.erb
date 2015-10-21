@@ -1,7 +1,7 @@
 <div class="ourContainer">
 
   <div class="presentation">
-    <%= render partial: 'slides' %>
+    <%= render partial: 'home/slides' %>
   </div>
 
 
@@ -19,7 +19,7 @@
 Reveal.initialize({
 
     // Display controls in the bottom right corner
-    controls: false,
+    controls: true,
 
     // Display a presentation progress bar
     progress: false,
@@ -31,7 +31,7 @@ Reveal.initialize({
     history: false,
 
     // Enable keyboard shortcuts for navigation
-    keyboard: false,
+    keyboard: true,
 
     // Enable the slide overview mode
     overview: true,
@@ -40,7 +40,7 @@ Reveal.initialize({
     center: true,
 
     // Enables touch navigation on devices with touch input
-    touch: false,
+    touch: true,
 
     // Loop the presentation
     loop: false,
@@ -112,7 +112,6 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
     "indexf": event.indexf
   }
 
-  // $.post("/api/next", slide);
 
   App.slidesNotification.advanceSlide(slide);
 

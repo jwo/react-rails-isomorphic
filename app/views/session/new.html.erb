@@ -1,0 +1,18 @@
+<h1>Sign in! (If you're jwo)</h1>
+
+<%= form_tag sign_in_path, method: :post, class: "signin" do %>
+
+  <div class="form-group">
+    <%= label_tag :username %>
+    <%= text_field_tag :username, params[:username], placeholder: "username" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :password %>
+    <%= password_field_tag :password, params[:password], placeholder: "password" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit_tag "Sign In" %>
+  </div>
+<% end %>
