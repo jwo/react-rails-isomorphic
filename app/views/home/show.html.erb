@@ -100,12 +100,19 @@ Reveal.initialize({
     // Amount to move parallax background (horizontal and vertical) on slide change
     // Number, e.g. 100
     parallaxBackgroundHorizontal: '',
-    parallaxBackgroundVertical: ''
+    parallaxBackgroundVertical: '',
+    dependencies: [
+
+       // Interpret Markdown in <section> elements
+       { src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+       { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+     ]
 
 });
 
 Reveal.addEventListener( 'slidechanged', function( event ) {
-
+  hljs.initHighlightingOnLoad();
   var slide = {
     "indexh": event.indexh,
     "indexv": event.indexv,
@@ -117,4 +124,5 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
   App.slidesNotification.advanceSlide(slide);
 
 } );
+
 </script>

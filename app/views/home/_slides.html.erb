@@ -1,12 +1,211 @@
 <div class="reveal">
-<div class="slides">
-      <section>
-        <h1>react-rails: an isomorphic match made in heaven</h1>
-        <p> - by Jesse Wolgamott (@jwo)</p>
-      </section>
-      <section>
-          <section>Vertical Slide 1</section>
-          <section>Vertical Slide 2</section>
-      </section>
+  <div class="slides">
+
+    <section>
+      <h1>react-rails: an isomorphic match made in heaven</h1>
+      <h3>By @jwo for HoustonRB</h3>
+    </section>
+
+    <section>
+      <h2>First, what is React?</h2>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/React.js_logo.svg/600px-React.js_logo.svg.png"%>
+    </section>
+
+    <section>
+        <h2>Created by Facebook</h2>
+        <h2>Designed to solve the state problem with jQuery</h2>
+        <h2>Will render whenever its internal state changes</h2>
+        <h2>Very fast</h2>
+        <h2>Web Component based</h2>
+    </section>
+
+    <section>
+      <h2>Why is it fast?</h2>
+      <h4>Instead of storing in the DOM, React has its own "Virtual DOM"</h4>
+      <h4>Then, it syncs changes, reusing what it can</h4>
+      <%= image_tag "https://cdn.tutsplus.com/net/uploads/2013/11/component-dom-tree.png" %>
+      <cite>https://cdn.tutsplus.com/net/uploads/2013/11/component-dom-tree.png</cite>
+    </section>
+
+    <section>
+      <h2>The very basics</h2>
+      <h3>each React component must have a "render" function</h3>
+      <h3>The render function has HTML inside of it.</h3>
+      <h3>When HTML+JS are in same file, we call it JSX</h3>
+    </section>
+
+    <section>
+      <h2>OhHai</h2>
+      <script src="https://gist.github.com/jwo/0277f1b7e7df06e293d5.js"></script>
+
+      <%= link_to "Run this code", "http://goo.gl/H9QVql", target: "_arbiter" %>
+    </section>
+
+    <section>
+      <h2>You can run javascript, like mapping</h2>
+
+      <script src="https://gist.github.com/jwo/a5a2f78dd2372578dca9.js"></script>
+
+      <%= link_to "Run this code", "http://goo.gl/TL1KnL", target: "_arbiter" %>
+
+    </section>
+
+    <section>
+      <h2>What about state?</h2>
+      <h3>State stores the components data.</h3>
+      <h3>Instead of in `data-` attributes</h3>
+      <h3>A component sets its own state</h3>
+    </section>
+
+    <section>
+      <h2>Code that uses State</h2>
+      <script src="https://gist.github.com/jwo/5039e282317eefacdc78.js"></script>
+      <%= link_to "Run this code", "http://goo.gl/NA5tby", target: "_arbiter" %>
+    </section>
+
+    <section>
+      <h2>Code that fetches data</h2>
+      <script src="https://gist.github.com/jwo/9c017c4874d686a9e3e9.js"></script>
+      <%= link_to "Run this code", "http://goo.gl/IQ5So2", target: "_arbiter" %>
+    </section>
+
+    <section>
+      <h2>What are props?</h2>
+
+      <h3>Props are sent in from a parent</h3>
+      <h3>Like URLs.</h3>
+      <h3>or like the products to loop over</h3>
+    </section>
+
+    <section>
+      <h2>Props come in from the outside</h2>
+      <h2>State is set from the inside</h2>
+    </section>
+
+    <section>
+      <h1>OK, so that's react. How does that help me?</h1>
+    </section>
+
+    <section>
+      <h2>JavaScript Build Systems</h2>
+      <h3>If you didn't want to use Rails, you need a build system</h3>
+      <h3>You need a router</h3>
+      <h3>You need many things</h3>
+    </section>
+
+    <section>
+      <h2>With Rails</h2>
+      <h3>use Rails' asset pipeline</h3>
+      <h3>use Rails for authentication</h3>
+      <h3>The great page load</h3>
+      <h3>Mix of Rails and React</h3>
+    </section>
+
+    <section>
+      <h2>Real time systems</h2>
+    </section>
+
+    <section>
+      <h2>Self updating systems</h2>
+    </section>
+
+    <section>
+      <h2>Use the best, easiest, part of React</h2>
+    </section>
+
+    <section>
+      <h2>react-rails</h2>
+      <h3>A gem. Because of course it is</h3>
+
+      <%= "\<%= react_component 'Taylor' %\>" %>
+
+      <h4>Renders the `Taylor` react component to that area of the page</h4>
+    </section>
+
+    <section>
+      <h2>Sending Props</h2>
+
+      <%= "\<%= react_component 'ProductGrid', {products: @products} %\>" %>
+
+    </section>
+
+    <section>
+      <h2>So, you can send props to a ProductGrid</h2>
+      <h2>It then makes an API call every 3 seconds to update inventory count.</h2>
+      <h2>[end]</h2>
+      <h2>No need to weird rendering</h2>
+    </section>
+
+    <section>
+      <h2>OK, but I bet there's more.</h2>
+    </section>
+
+    <section>
+      <h2>There's More</h2>
+    </section>
+
+    <section>
+      <h2>Prerender.io</h2>
+      <h4>An entire service to render Angular/React/etc for SEO</h4>
+    </section>
+
+    <section>
+      <%= "\<%= react_component 'ProductGrid', {products: @products} %\>, {prerender: true}" %>
+    </section>
+
+    <section>
+      <h2>WHAT JUST HAPPENED</h2>
+    </section>
+
+    <section>
+      <h2>Bonus Awesome: action cable</h2>
+      <h3>New in Rails 5, available now</h3>
+    </section>
+
+    <section>
+      <code>gem 'actioncable', github: "rails/actioncable"</code>
+      <h3>Start a puma cable process</h3>
+      <h3>Have a Channel, and also a Subscription</h3>
+    </section>
+
+    <section>
+      <script src="https://gist.github.com/jwo/8ade15a080c00fa278bc.js"></script>
+    </section>
+
+    <section>
+      <h2>Broadcast the votes that Votie listens to</h2>
+      <code>ActionCable.server.broadcast "votes", Vote.datum</code>
+    </section>
+
+    <section>
+      <%= image_tag "components.png" %>
+    </section>
+
+    <section>
+      <%= image_tag "actioncable.png" %>
+    </section>
+
+    <section>
+      <h1>OK, so what's bad?</h1>
+    </section>
+
+    <section>
+      <h2>Asset Pipeline -- webpack tends to work'ish</h2>
+      <h2>webpack dependencies are hard</h2>
+      <h5>You _could_ get rid of Asset Pipeline, but I feel that's a big spicy meatball</h5>
+    </section>
+
+    <section>
+      <h2>prerender tends to work well, but Rendering JSON in controller is harder than you think. </h2>
+      <h5>Just use ActiveModelSerializes</h5>
+    </section>
+
+    <section>
+      <h1>I'm JWo.</h1>
+      <h3>The Iron Yard</h3>
+      <h3>Tex-Mex Consulting</h3>
+      <h3>Hank's Heroes</h3>
+    </section>
+
   </div>
 </div>

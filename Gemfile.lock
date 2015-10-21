@@ -88,6 +88,8 @@ GEM
       thor (~> 0.19.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    highlight_js-rails (7.1.0)
+      rails (>= 3.1.1)
     hiredis (0.5.2)
     hitimes (1.2.3)
     i18n (0.7.0)
@@ -203,6 +205,7 @@ DEPENDENCIES
   d3-rails
   font-awesome-rails
   foreman
+  highlight_js-rails
   jbuilder (~> 2.0)
   jquery-rails
   pg

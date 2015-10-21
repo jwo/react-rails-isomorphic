@@ -18,6 +18,11 @@
 //= require nv.d3.min
 //= require react-nvd3
 //= require turbolinks
+//= require highlight_js/highlight
+//= require highlight_js/languages/ruby
+//= require highlight_js/languages/coffeescript
+//= require highlight_js/languages/javascript
 //= require react_ujs
+//= require reveal-code-focus
 //= require components
 //= require_tree .

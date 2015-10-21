@@ -49,3 +49,4 @@ gem "d3-rails"
 gem "font-awesome-rails"
 gem 'actioncable', github: "rails/actioncable"
 gem "puma"
+gem 'highlight_js-rails'
