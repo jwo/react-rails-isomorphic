@@ -1,0 +1,24 @@
+redis:
+  image: redis
+cable:
+  build: .
+  command: bundle exec puma -p 28080 cable/config.ru
+  volumes:
+    - .:/myapp
+  ports:
+    - "28080:28080"
+  links:
+    - redis
+    - db
+web:
+  build: .
+  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  volumes:
+    - .:/myapp
+  ports:
+    - "3000:3000"
+  links:
+    - redis
+    - db
+db:
+  image: postgres
