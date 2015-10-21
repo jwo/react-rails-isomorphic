@@ -1,0 +1,10 @@
+#= require cable
+
+this.App = {};
+
+<% if Rails.env.production? %>
+App.cable = Cable.createConsumer("ws://react.comal.io:28080");
+<% else %>
+App.cable = Cable.createConsumer("ws://localhost:28080");
+
+<% end %>
