@@ -2,6 +2,11 @@ module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
 
+
+    def allow_request_origin?
+      true
+    end
+    
     def connect
       #self.current_user = find_verified_user
       self.current_user = User.first # for now
