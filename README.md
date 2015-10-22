@@ -1,6 +1,9 @@
 React-Rails
 ===========
 
+<script async class="speakerdeck-embed"
+data-id="8ab82eae2f8345539145e2f52c42583e" data-ratio="1.37081659973226"
+src="//speakerdeck.com/assets/embed.js"></script>
 
 To Start it up, each in their own terminal session:
 
