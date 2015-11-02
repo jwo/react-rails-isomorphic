@@ -8,7 +8,7 @@ cable:
   ports:
     - "28080:28080"
   environment:
-    "ACTION_CABLE":"ws://159.203.143.6:28080"
+    ACTION_CABLE: ws://159.203.143.6:28080
   links:
     - redis
     - db
@@ -20,7 +20,7 @@ web:
   ports:
     - "3000:3000"
   environment:
-    "ACTION_CABLE":"ws://159.203.143.6:28080"
+    ACTION_CABLE : ws://159.203.143.6:28080
   links:
     - redis
     - db

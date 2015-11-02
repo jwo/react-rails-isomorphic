@@ -1,4 +1,4 @@
 #= require cable
 
 this.App = {};
-App.cable = Cable.createConsumer("<%= Rails.application.secrets.action_cable %>");
+App.cable = Cable.createConsumer("<%= ENV.fetch("ACTION_CABLE", "ws://0.0.0.0:28080") %>");
