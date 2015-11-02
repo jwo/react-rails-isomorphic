@@ -1,8 +1,4 @@
 #= require cable
 
 this.App = {};
-<% if Rails.env.production? %>
-App.cable = Cable.createConsumer("ws://react.comal.io:28080");
-<% else %>
-App.cable = Cable.createConsumer("ws://192.168.59.103:28080");
-<% end %>
+App.cable = Cable.createConsumer("<%= Rails.application.secrets.action_cable %>");
